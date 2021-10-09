@@ -90,8 +90,7 @@ body {
   margin-top: 15px;
   border: 0;
   padding: 0.75rem 1.5rem;
-  font-weight: normal;
-  font-size: 1.1rem;
+  font-size: 1rem;
   border-radius: 100px;
   color: #fff;
   background-color: #686868;
@@ -106,50 +105,153 @@ body {
 }
 
 .fonctionnement {
-  margin-top: 35px;
-  border: solid;
+  margin-top: 15px;
+  margin-bottom: 40px;
+  padding: 7px;
 }
 .fonctionnement .fas {
   margin: 25px;
 }
 
 .fonctionnement__h2 {
-  padding-left: 25px;
+  padding-left: 13px;
 }
 
 .fonctionnement__flex {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
 }
 
 .choix__restaurant {
   display: flex;
   align-items: center;
-  flex-basis: 30%;
-  padding: 10px;
+  margin: 12px;
+  padding: 5px;
+  text-decoration: none;
+  color: #979696;
   box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
   border-radius: 1.25rem;
   background-color: #f6f6f6;
+}
+.choix__restaurant p {
+  font-weight: bold;
+  color: #000;
 }
 
 .composition__menu {
   display: flex;
   align-items: center;
-  flex-basis: 30%;
-  padding: 10px;
+  margin: 12px;
+  padding: 5px;
+  text-decoration: none;
+  color: #979696;
   box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
   border-radius: 1.25rem;
   background-color: #f6f6f6;
+}
+.composition__menu p {
+  font-weight: bold;
+  color: #000;
 }
 
 .degustation__menu {
   display: flex;
   align-items: center;
-  flex-basis: 30%;
-  padding: 10px;
+  margin: 12px;
+  padding: 5px;
+  text-decoration: none;
+  color: #979696;
   box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
   border-radius: 1.25rem;
   background-color: #f6f6f6;
+}
+.degustation__menu p {
+  font-weight: bold;
+  color: #000;
+}
+
+.degustation__menu__color {
+  background-color: #F5EDFF;
+  color: #9356DC;
+}
+
+.restaurant {
+  background-color: #F6F6F6;
+  padding-bottom: 40px;
+}
+
+.restaurant_centre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.restaurant article {
+  background: white;
+  width: 90%;
+  height: 250px;
+  margin-bottom: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0px 5px #0000002e;
+}
+
+.restaurant_h2 {
+  padding-top: 30px;
+  padding-left: 13px;
+}
+
+footer {
+  padding: 15px;
+  background-color: #353535;
+}
+
+footer h2 {
+  font-family: "Shrikhand", sans-serif;
+  margin: 0;
+  padding-left: 10px;
+  padding-bottom: 15px;
+  color: #fff;
+  font-size: 18px;
+}
+
+footer p {
+  margin: 0;
+  padding-left: 10px;
+  padding-bottom: 7px;
+  color: #fff;
+}
+
+/*
+@media screen and (max-width: 1200px) {
+
+}
+@media screen and (max-width: 1024px) {
+
+}
+@media screen and (max-width: 768px) {
+
+}
+
+@media screen and (min-width: 480px) {
+
+}
+
+*/
+@media screen and (min-width: 768px) {
+  .fonctionnement__flex {
+    flex-direction: row;
+  }
+  .fonctionnement__flex a {
+    flex-basis: 33%;
+  }
+
+  .restaurant_centre {
+    flex-direction: row;
+  }
+
+  .restaurant article {
+    margin: 15px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
