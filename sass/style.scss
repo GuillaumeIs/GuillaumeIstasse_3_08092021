@@ -149,7 +149,7 @@ $sections: choix__restaurant, composition__menu, degustation__menu;
 .restaurant article {
     background: white;
     width: 90%;
-    height: 250px;
+    height: auto;
     margin-bottom: 25px;
     border-radius: 15px;
     box-shadow: 0 0px 5px #0000002e;
@@ -161,25 +161,62 @@ $sections: choix__restaurant, composition__menu, degustation__menu;
 }
 
 footer {
-    padding: 15px;
+    padding: 5px;
     background-color: #353535;
+    list-style: none;
 }
+
+footer ul {
+    margin-left:0;
+    padding-left:5px;
+    list-style: none;
+}
+
+footer li {
+    margin: 9px;
+}
+
+footer a {
+    margin:0;
+    padding:5px;
+    text-decoration:none;
+    color: #fff;
+}
+
+.fas__1 {
+    margin-right: 15px;
+}
+
+.fas__2 {
+    margin-right: 13px;
+}
+
 
 footer h2 {
     font-family: "Shrikhand", sans-serif;
     margin: 0;
     padding-left: 10px;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     color: #fff;
     font-size: 18px;
 }
 
-footer p {
-    margin: 0;
-    padding-left: 10px;
-    padding-bottom: 7px;
+.menu {
+    background: #9356DC;
     color: #fff;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    position: relative;
+    right: 14px;
 }
+
+.menu span {
+    position: absolute;
+    top: 4.5px;
+    left: 7px;
+}
+
 /*
 @media screen and (max-width: 1200px) {
 
