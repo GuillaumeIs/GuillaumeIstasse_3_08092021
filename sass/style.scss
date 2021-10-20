@@ -9,7 +9,7 @@ body {
     margin: 0;
 }
 
-$sections: logo, reservation, paris_centre;
+$sections: logo, reservation, recherche_centre;
 
 @each $section in $sections {
  .section__#{$section} {
@@ -18,7 +18,7 @@ $sections: logo, reservation, paris_centre;
 }
 }
 
-.section__paris {
+.section__recherche {
     width: 165px;
 }
 
@@ -28,7 +28,7 @@ $sections: logo, reservation, paris_centre;
     z-index: 1;
 }
 
-.background__paris {
+.background__recherche {
     background-color: #EAEAEA;
     color: #414040;;
     font-weight: bold;
@@ -44,7 +44,7 @@ $sections: logo, reservation, paris_centre;
     }
 }
 
-.section__paris__1 {
+.section__recherche__1 {
     display: flex;
     align-items: center;
     height: 50px;
@@ -88,6 +88,12 @@ $sections: logo, reservation, paris_centre;
             box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
         }
 
+}
+
+.btn__centre {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
 }
 
 .fonctionnement {
@@ -140,6 +146,12 @@ $sections: choix__restaurant, composition__menu, degustation__menu;
     padding-bottom: 40px;
 }
 
+.restaurant a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+}
+
 .restaurant_centre {
     display:flex;
     flex-direction: column;
@@ -150,7 +162,7 @@ $sections: choix__restaurant, composition__menu, degustation__menu;
     background: white;
     width: 90%;
     height: auto;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     border-radius: 15px;
     box-shadow: 0 0px 5px #0000002e;
 }
@@ -233,6 +245,128 @@ footer h2 {
 }
 
 */
+
+.img__article {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    object-position: 35% 65%;
+    border-radius: 12.5px 12.5px 0 0;
+}
+
+.h3__article {
+    margin: 0;
+    padding-top:10px;
+    padding-left: 15px;
+    padding-bottom: 5px;
+}
+
+.p__article {
+    margin: 0;
+    padding-left: 15px;
+    padding-bottom: 20px;
+}
+
+.class__nouveau {
+    position: relative;
+}
+
+.nouveau {
+    position: absolute;
+    top: 15px;
+    right: 17px;
+    padding: 8px 14px 8px 14px;
+    background-color: #99E2D0;
+    color: #0B8D6D;
+    border-radius: 2px;
+}
+
+.p__page {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -50px;
+    background-color: #F6F6F6;
+    border-radius: 20px 20px 0 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.page__p {
+    background-color: #F6F6F6;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.h2__page {
+    font-family: "Shrikhand", sans-serif;
+}
+
+.menu__b h3 {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.menu__line {
+    margin-top: 5px;
+    width: 35px;
+    height: 5px;
+    border-bottom: #99e2d0 solid;
+}
+
+.menu__box {
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.menu__box h4 {
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.menu__box p {
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.menu__p {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+}
+
+.menu__commander {
+    color: white;
+    padding: 1rem 4rem;
+    background-color: #686868;
+    background-image: linear-gradient(0deg,rgba(147,86,220,.9),rgba(255,121,218,.9));
+}
+
+.prix {
+    display: flex;
+    align-items: flex-end;
+    margin-left: 15px;
+}
+
+.palette__gout {
+    width: 100%;
+    object-fit: cover;
+    max-height: 30rem;
+}
 
 @media screen and (min-width: 768px) {
     .fonctionnement__flex {
