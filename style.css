@@ -12,6 +12,16 @@
   font-style: italic;
   font-display: swap;
 }
+@keyframes uppage {
+  0% {
+    transform: translateX(75px);
+    visibility: hidden;
+  }
+  100% {
+    transform: translateX(0px);
+    visibility: visible;
+  }
+}
 * {
   box-sizing: border-box;
 }
@@ -378,13 +388,31 @@ footer h2 {
 .menu__p {
   display: flex;
   justify-content: space-between;
-  overflow: hidden;
+  width: 100%;
   margin-top: 15px;
   margin-bottom: 15px;
   padding: 15px;
+  overflow: hidden;
+  cursor: pointer;
   background-color: white;
   border-radius: 15px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  animation-name: uppage;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  visibility: hidden;
+}
+
+.menu__p:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.menu__p:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.menu__p:nth-child(3) {
+  animation-delay: 0.4s;
 }
 
 .menu__commander {
@@ -397,13 +425,68 @@ footer h2 {
 .prix {
   display: flex;
   align-items: flex-end;
-  margin-left: 15px;
 }
 
 .palette__gout {
   width: 100%;
   object-fit: cover;
   max-height: 30rem;
+}
+
+.valid__box {
+  background: #99e2d0;
+  width: 0;
+  margin: -15px -15px -15px 15px;
+  border-radius: 0 15px 15px 0;
+  transition: width 0.5s;
+}
+
+.menu__p:hover .valid__box {
+  width: 75px;
+}
+
+.valid.fas {
+  width: 75px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  transition: 0.5s ease-in-out;
+}
+
+.menu__p:hover .valid {
+  transform: rotate(-360deg);
+}
+
+.space__box {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.section__logo__1 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fleche__index__1 {
+  position: absolute;
+  left: 40px;
+  transform: translateY(125%);
+  color: #948f8f;
+  z-index: 1;
+}
+
+.far.fa-heart:hover {
+  color: #9356DC;
+}
+
+.flex__click {
+  display: flex;
 }
 
 @media screen and (min-width: 768px) {
@@ -420,6 +503,18 @@ footer h2 {
 
   .restaurant article {
     margin: 15px;
+  }
+
+  .box__menu {
+    display: flex;
+  }
+
+  .menu__p {
+    margin: 15px;
+  }
+
+  .fleche__index__1 {
+    left: 75px;
   }
 }
 
