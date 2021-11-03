@@ -1,0 +1,52 @@
+@keyframes transform {
+    0% {
+      transform: translateX(75px);
+      visibility:hidden;
+    }
+    100%  {
+      transform: translateX(0px);
+      visibility: visible;
+    }
+}
+
+@keyframes page {
+	0% {
+		visibility: visible;
+	}
+	100% {
+
+		visibility: hidden;
+	}
+}
+
+@keyframes animball_one
+{
+	0% {
+        position: absolute;
+    }
+	50% {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        opacity: 0.5;
+}
+	100% {
+        position: absolute;
+    }
+}
+
+@keyframes animball_two
+{
+	0% {
+        transform:rotate(0deg)
+        scale(1);
+    }
+	50% {
+        transform:rotate(360deg)
+        scale(1.3);
+    }
+	100% {
+        transform:rotate(720deg)
+        scale(1);
+    }
+}

@@ -1,15 +1,5 @@
 @import "libs/fonts.scss";
-
-@keyframes uppage {
-    0% {
-      transform: translateX(75px);
-      visibility:hidden;
-    }
-    100%  {
-      transform: translateX(0px);
-      visibility: visible;
-    }
-}
+@import "libs/keyframes.scss";
 
 * {
     box-sizing: border-box;
@@ -144,12 +134,12 @@ $sections: choix__restaurant, composition__menu, degustation__menu;
         font-weight: bold;
         color: #000;
     }
-}
-}
 
-.degustation__menu__color {
-    background-color: #F5EDFF;
-    color: #9356DC;
+    &:hover {
+        background-color: #F5EDFF;
+        color: #9356DC;
+    }
+}
 }
 
 .restaurant {
@@ -176,6 +166,13 @@ $sections: choix__restaurant, composition__menu, degustation__menu;
     margin-bottom: 30px;
     border-radius: 15px;
     box-shadow: 0 0px 5px #0000002e;
+    transform: scale(1);
+    transition-property: transform;
+    transition-duration: 1s;
+
+    &:hover {
+        transform: scale(1.1);
+    }
 }
 
 .restaurant_h2 {
@@ -187,23 +184,32 @@ footer {
     padding: 5px;
     background-color: #353535;
     list-style: none;
-}
 
-footer ul {
-    margin-left:0;
-    padding-left:5px;
-    list-style: none;
-}
+    & ul {
+        margin-left:0;
+        padding-left:5px;
+        list-style: none;
+    }
 
-footer li {
-    margin: 9px;
-}
+    & li {
+        margin: 9px;
+    }
 
-footer a {
-    margin:0;
-    padding:5px;
-    text-decoration:none;
-    color: #fff;
+    & a {
+        margin:0;
+        padding:5px;
+        text-decoration:none;
+        color: #fff;
+    }
+
+    & h2 {
+        font-family: "Shrikhand", sans-serif;
+        margin: 0;
+        padding-left: 10px;
+        padding-bottom: 10px;
+        color: #fff;
+        font-size: 18px;
+    }
 }
 
 .fas__1 {
@@ -214,16 +220,6 @@ footer a {
     margin-right: 13px;
 }
 
-
-footer h2 {
-    font-family: "Shrikhand", sans-serif;
-    margin: 0;
-    padding-left: 10px;
-    padding-bottom: 10px;
-    color: #fff;
-    font-size: 18px;
-}
-
 .menu {
     background: #9356DC;
     color: #fff;
@@ -232,12 +228,12 @@ footer h2 {
     border-radius: 50%;
     position: relative;
     right: 14px;
-}
 
-.menu span {
-    position: absolute;
-    top: 4.5px;
-    left: 7px;
+    & span {
+        position: absolute;
+        top: 4.5px;
+        left: 7px;
+    }
 }
 
 /*
@@ -334,18 +330,18 @@ footer h2 {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}
 
-.menu__box h4 {
-    margin: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+    & h4 {
+        margin: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 
-.menu__box p {
-    margin: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    & p {
+        margin: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }
 
 .menu__p {
@@ -360,22 +356,30 @@ footer h2 {
     background-color: white;
     border-radius: 15px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    animation-name: uppage;
+    animation-name: transform;
     animation-duration: 1s;
     animation-fill-mode: forwards;
     visibility: hidden;
-}
 
-.menu__p:nth-child(1) {
-    animation-delay: 0.2s;
-}
+    &:nth-child(1) {
+        animation-delay: 0.25s;
+    }
+    
+    &:nth-child(2) {
+        animation-delay: 0.55s;
+    }
+    
+    &:nth-child(3) {
+        animation-delay: 0.75s;
+    }
 
-.menu__p:nth-child(2) {
-    animation-delay: 0.3s;
-}
+    &:hover .valid__box {
+        width: 75px;
+    }
 
-.menu__p:nth-child(3) {
-    animation-delay: 0.4s;
+    &:hover .valid {
+        transform: rotate(-360deg);
+    }
 }
 
 .menu__commander {
@@ -404,10 +408,6 @@ footer h2 {
     transition: width 0.5s;
 }
 
-.menu__p:hover .valid__box {
-	width: 75px;
-}
-
 .valid.fas {
     width: 75px;
 	height: 100%;
@@ -416,10 +416,6 @@ footer h2 {
 	align-items: center;
 	color: #fff;
 	transition: 0.5s ease-in-out;
-}
-
-.menu__p:hover .valid {
-	transform: rotate(-360deg);
 }
 
 .space__box {
@@ -444,12 +440,96 @@ footer h2 {
     z-index: 1;
 }
 
-.far.fa-heart:hover {
-    color:#9356DC;
-}
-
 .flex__click {
     display:flex;
+}
+
+.bloc_page {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	animation: page 2s forwards;
+	background: #FFF;
+	position: fixed;
+	z-index: 2;
+}
+
+.contener_general
+{
+	animation:animball_two 1s infinite;
+	width:44px; height:44px;
+}
+.contener_mixte
+{
+	width:44px; height:44px; 
+}
+.ballcolor
+{
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+}
+.ball_1, .ball_2, .ball_3, .ball_4
+{
+	position: absolute;
+	animation: animball_one 1s infinite ease;
+}
+.ball_1
+{
+	background-color:#CF6DF1;
+	top:0; left:0;
+}
+.ball_2
+{
+	background-color:#99E2D0;
+	top:0; left:24px;
+}
+.ball_3
+{
+	background-color:#FF7DF0;
+	top:24px; left:0;
+}
+.ball_4
+{
+	background-color:#CF6DF1;
+	top:24px; left:24px;
+}
+
+.article__flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heart__centre {
+	cursor: pointer;
+    padding: 15px;
+
+    & .fas {
+        position: relative;
+        visibility: hidden;
+    }
+
+    & .far {
+        position: absolute;
+    }
+
+    &:hover .far {
+        visibility: hidden;
+    }
+
+    &:hover .fas {
+        visibility: visible;
+        background: linear-gradient(#9356dc, #ff79da);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+.heart--centre {
+    padding: 0px;
 }
 
 @media screen and (min-width: 768px) {
